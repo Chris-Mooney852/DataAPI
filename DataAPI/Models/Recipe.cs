@@ -12,19 +12,18 @@ namespace DataAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Ingredient
+    public partial class Recipe
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Ingredient()
+        public Recipe()
         {
-            this.Recipes = new HashSet<Recipe>();
+            this.Ingredients = new HashSet<Ingredient>();
         }
     
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public int Calories { get; set; }
+        public int recipeId { get; set; }
+        public string recipeName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Recipe> Recipes { get; set; }
+        public virtual ICollection<Ingredient> Ingredients { get; set; }
     }
 }

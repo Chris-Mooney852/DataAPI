@@ -98,5 +98,36 @@ namespace DataAPI.Controllers
             }
             
         }
+
+        /// <summary>
+        /// Deletes an ingredient from the sql database
+        /// </summary>
+        /// <param name="id">ID of the ingredient to be deleted</param>
+        /// <returns></returns>
+        public HttpResponseMessage Delete(int id)
+        {
+            try
+            {
+                using (rpgfitnessDBContext dbContext = new rpgfitnessDBContext())
+                {
+                    var entity = dbContext.Ingredients.FirstOrDefault(e => e.ID == id);
+                    if (entity == null)
+                    {
+                        return Request.CreateErrorResponse(HttpStatusCode.NotFound,
+                            "Ingredient with Id = " + id.ToString() + " not found to delete");
+                    }
+                    else
+                    {
+                        dbContext.Ingredients.Remove(entity);
+                        dbContext.SaveChanges();
+                        return Request.CreateResponse(HttpStatusCode.OK);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
     }
 }
