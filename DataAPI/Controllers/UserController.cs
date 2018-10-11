@@ -12,7 +12,7 @@ namespace DataAPI.Controllers
     {
         public IEnumerable<Player> Get()
         {
-            using (rpgfitnessDBContext dBContext = new rpgfitnessDBContext())
+            using (PlayerDBContext dBContext = new PlayerDBContext())
             {
                 return dBContext.Players.ToList();
             }
@@ -20,7 +20,7 @@ namespace DataAPI.Controllers
 
         public Player Get(int id)
         {
-            using (rpgfitnessDBContext dBContext = new rpgfitnessDBContext())
+            using (PlayerDBContext dBContext = new PlayerDBContext())
             {
                 return dBContext.Players.FirstOrDefault(p => p.UserID == id);
             }
@@ -30,7 +30,7 @@ namespace DataAPI.Controllers
         {
             try
             {
-                using (rpgfitnessDBContext dBContext = new rpgfitnessDBContext())
+                using (PlayerDBContext dBContext = new PlayerDBContext())
                 {
                     dBContext.Players.Add(player);
 
@@ -52,7 +52,7 @@ namespace DataAPI.Controllers
         {
             try
             {
-                using (rpgfitnessDBContext dbContext = new rpgfitnessDBContext())
+                using (PlayerDBContext dbContext = new PlayerDBContext())
                 {
                     var entity = dbContext.Players.FirstOrDefault(e => e.UserID == id);
 
@@ -92,7 +92,7 @@ namespace DataAPI.Controllers
         {
             try
             {
-                using (rpgfitnessDBContext dbContext = new rpgfitnessDBContext())
+                using (PlayerDBContext dbContext = new PlayerDBContext())
                 {
                     var entity = dbContext.Players.FirstOrDefault(e => e.UserID == id);
                     if (entity == null)

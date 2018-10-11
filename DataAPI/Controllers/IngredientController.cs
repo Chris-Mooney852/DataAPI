@@ -17,7 +17,7 @@ namespace DataAPI.Controllers
         /// <returns>List of ingredients</returns>
         public IEnumerable<Ingredient> Get()
         {
-            using (rpgfitnessDBContext dBContext = new rpgfitnessDBContext())
+            using (IngredientDBContext dBContext = new IngredientDBContext())
             {
                 return dBContext.Ingredients.ToList();
             }
@@ -30,7 +30,7 @@ namespace DataAPI.Controllers
         /// <returns>Ingredient with the provided ID from the SQL database</returns>
         public Ingredient Get(int id)
         {
-            using (rpgfitnessDBContext dbContext = new rpgfitnessDBContext())
+            using (IngredientDBContext dbContext = new IngredientDBContext())
             {
                 return dbContext.Ingredients.FirstOrDefault(e => e.ID == id);
             }
@@ -45,7 +45,7 @@ namespace DataAPI.Controllers
         {
             try
             {
-                using (rpgfitnessDBContext dBContext = new rpgfitnessDBContext())
+                using (IngredientDBContext dBContext = new IngredientDBContext())
                 {
                     dBContext.Ingredients.Add(ingredient);
                     dBContext.SaveChanges();
@@ -72,7 +72,7 @@ namespace DataAPI.Controllers
         {
             try
             {
-                using (rpgfitnessDBContext dbContext = new rpgfitnessDBContext())
+                using (IngredientDBContext dbContext = new IngredientDBContext())
                 {
                     var entity = dbContext.Ingredients.FirstOrDefault(e => e.ID == id);
 
@@ -108,7 +108,7 @@ namespace DataAPI.Controllers
         {
             try
             {
-                using (rpgfitnessDBContext dbContext = new rpgfitnessDBContext())
+                using (IngredientDBContext dbContext = new IngredientDBContext())
                 {
                     var entity = dbContext.Ingredients.FirstOrDefault(e => e.ID == id);
                     if (entity == null)

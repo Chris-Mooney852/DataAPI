@@ -13,10 +13,10 @@ namespace DataAPI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class rpgfitnessDBContext : DbContext
+    public partial class IngredientDBContext : DbContext
     {
-        public rpgfitnessDBContext()
-            : base("name=rpgfitnessDBContext")
+        public IngredientDBContext()
+            : base("name=IngredientDBContext")
         {
         }
     
@@ -26,7 +26,5 @@ namespace DataAPI.Models
         }
     
         public virtual DbSet<Ingredient> Ingredients { get; set; }
-        public virtual DbSet<Player> Players { get; set; }
-        public virtual DbSet<Recipe> Recipes { get; set; }
     }
 }
