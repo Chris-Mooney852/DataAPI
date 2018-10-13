@@ -191,6 +191,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientController.cs" />
+    <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -232,6 +233,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PlayerDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Recipe.cs">
+      <DependentUpon>RecipeDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecipeDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecipeDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecipeDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecipeDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecipeDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecipeDataModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -262,6 +281,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PlayerDBModel.edmx</DependentUpon>
       <LastGenOutput>PlayerDBModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RecipeDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RecipeDataModel.edmx</DependentUpon>
+      <LastGenOutput>RecipeDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RecipeDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RecipeDataModel.edmx</DependentUpon>
+      <LastGenOutput>RecipeDataModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -300,6 +329,13 @@
     </EntityDeploy>
     <Content Include="Models\PlayerDBModel.edmx.diagram">
       <DependentUpon>PlayerDBModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\RecipeDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RecipeDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RecipeDataModel.edmx.diagram">
+      <DependentUpon>RecipeDataModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\DataAPI20181004065840 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
