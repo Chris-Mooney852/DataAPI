@@ -77,7 +77,7 @@ namespace DataAPI.Controllers
 
                     if (entity == null)
                     {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Ingredient with the ID " + id.ToString() + " not found");
+                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Recipe with the ID " + id.ToString() + " not found");
                     }
                     else
                     {
@@ -112,7 +112,7 @@ namespace DataAPI.Controllers
                     if (entity == null)
                     {
                         return Request.CreateErrorResponse(HttpStatusCode.NotFound,
-                            "Ingredient with Id = " + id.ToString() + " not found to delete");
+                            "Recipe with Id = " + id.ToString() + " not found to delete");
                     }
                     else
                     {

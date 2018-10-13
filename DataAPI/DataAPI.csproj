@@ -189,6 +189,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ContentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
@@ -196,6 +197,21 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContentsDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContentsDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContentsDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContentsDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContentsDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContentsDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Ingredient.cs">
       <DependentUpon>IngredientDataModel.tt</DependentUpon>
@@ -236,6 +252,9 @@
     <Compile Include="Models\Recipe.cs">
       <DependentUpon>RecipeDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecipeContent.cs">
+      <DependentUpon>ContentsDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\RecipeDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -262,6 +281,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\ContentsDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ContentsDBModel.edmx</DependentUpon>
+      <LastGenOutput>ContentsDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ContentsDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ContentsDBModel.edmx</DependentUpon>
+      <LastGenOutput>ContentsDBModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\IngredientDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>IngredientDataModel.edmx</DependentUpon>
@@ -336,6 +365,13 @@
     </EntityDeploy>
     <Content Include="Models\RecipeDataModel.edmx.diagram">
       <DependentUpon>RecipeDataModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ContentsDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ContentsDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ContentsDBModel.edmx.diagram">
+      <DependentUpon>ContentsDBModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\DataAPI20181004065840 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
