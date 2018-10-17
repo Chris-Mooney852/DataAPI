@@ -18,11 +18,11 @@ namespace DataAPI.Controllers
             }
         }
 
-        public Player Get(int id)
+        public Player Get(string name)
         {
             using (PlayerDBContext dBContext = new PlayerDBContext())
             {
-                return dBContext.Players.FirstOrDefault(p => p.UserID == id);
+                return dBContext.Players.FirstOrDefault(p => p.UserName == name);
             }
         }
 
@@ -72,6 +72,7 @@ namespace DataAPI.Controllers
                         entity.ConsumedCalories = player.ConsumedCalories;
                         entity.TargetDailySteps = player.TargetDailySteps;
                         entity.CurrentSteps = player.CurrentSteps;
+                        entity.LastLogin = player.LastLogin;
 
 
 

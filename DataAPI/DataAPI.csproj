@@ -232,22 +232,22 @@
       <DependentUpon>IngredientDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Player.cs">
-      <DependentUpon>PlayerDBModel.tt</DependentUpon>
+      <DependentUpon>PlayerDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PlayerDBModel.Context.cs">
+    <Compile Include="Models\PlayerDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PlayerDBModel.Context.tt</DependentUpon>
+      <DependentUpon>PlayerDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PlayerDBModel.cs">
+    <Compile Include="Models\PlayerDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PlayerDBModel.tt</DependentUpon>
+      <DependentUpon>PlayerDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PlayerDBModel.Designer.cs">
+    <Compile Include="Models\PlayerDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PlayerDBModel.edmx</DependentUpon>
+      <DependentUpon>PlayerDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Recipe.cs">
       <DependentUpon>RecipeDataModel.tt</DependentUpon>
@@ -301,15 +301,15 @@
       <DependentUpon>IngredientDataModel.edmx</DependentUpon>
       <LastGenOutput>IngredientDataModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\PlayerDBModel.Context.tt">
+    <Content Include="Models\PlayerDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PlayerDBModel.edmx</DependentUpon>
-      <LastGenOutput>PlayerDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>PlayerDataModel.edmx</DependentUpon>
+      <LastGenOutput>PlayerDataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\PlayerDBModel.tt">
+    <Content Include="Models\PlayerDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PlayerDBModel.edmx</DependentUpon>
-      <LastGenOutput>PlayerDBModel.cs</LastGenOutput>
+      <DependentUpon>PlayerDataModel.edmx</DependentUpon>
+      <LastGenOutput>PlayerDataModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\RecipeDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -352,13 +352,6 @@
     <Content Include="Models\IngredientDataModel.edmx.diagram">
       <DependentUpon>IngredientDataModel.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\PlayerDBModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PlayerDBModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\PlayerDBModel.edmx.diagram">
-      <DependentUpon>PlayerDBModel.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\RecipeDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RecipeDataModel.Designer.cs</LastGenOutput>
@@ -372,6 +365,13 @@
     </EntityDeploy>
     <Content Include="Models\ContentsDBModel.edmx.diagram">
       <DependentUpon>ContentsDBModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\PlayerDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PlayerDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PlayerDataModel.edmx.diagram">
+      <DependentUpon>PlayerDataModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\DataAPI20181004065840 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

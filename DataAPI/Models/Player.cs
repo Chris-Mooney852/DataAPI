@@ -24,5 +24,6 @@ namespace DataAPI.Models
         public Nullable<int> ConsumedCalories { get; set; }
         public Nullable<int> TargetDailySteps { get; set; }
         public Nullable<int> CurrentSteps { get; set; }
+        public Nullable<System.DateTime> LastLogin { get; set; }
     }
 }

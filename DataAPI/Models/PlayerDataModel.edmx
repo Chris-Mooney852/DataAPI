@@ -19,6 +19,7 @@
           <Property Name="ConsumedCalories" Type="int" />
           <Property Name="TargetDailySteps" Type="int" />
           <Property Name="CurrentSteps" Type="int" />
+          <Property Name="LastLogin" Type="date" />
         </EntityType>
         <EntityContainer Name="ModelsStoreContainer">
           <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
@@ -42,6 +43,7 @@
           <Property Name="ConsumedCalories" Type="Int32" />
           <Property Name="TargetDailySteps" Type="Int32" />
           <Property Name="CurrentSteps" Type="Int32" />
+          <Property Name="LastLogin" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityContainer Name="PlayerDBContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Players" EntityType="Self.Player" />
@@ -65,6 +67,7 @@
                 <ScalarProperty Name="ConsumedCalories" ColumnName="ConsumedCalories" />
                 <ScalarProperty Name="TargetDailySteps" ColumnName="TargetDailySteps" />
                 <ScalarProperty Name="CurrentSteps" ColumnName="CurrentSteps" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -27,11 +27,11 @@ namespace DataAPI.Controllers
         /// </summary>
         /// <param name="id">Identification number of the RecipeContent to get</param>
         /// <returns>RecipeContent with the provided ID from the SQL database</returns>
-        public RecipeContent Get(int id)
+        public List<RecipeContent> Get(int id)
         {
             using (ContentsDBContext dbContext = new ContentsDBContext())
             {
-                return dbContext.RecipeContents.FirstOrDefault(e => e.recipeId == id);
+                return dbContext.RecipeContents.Where(e => e.recipeId == id).ToList();
             }
         }
 
