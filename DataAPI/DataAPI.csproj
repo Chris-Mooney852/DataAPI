@@ -190,6 +190,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ContentsController.cs" />
+    <Compile Include="Controllers\ExerciseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
@@ -212,6 +213,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContentsDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Exercise.cs">
+      <DependentUpon>ExerciseDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExerciseDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExerciseDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExerciseDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExerciseDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExerciseDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExerciseDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Ingredient.cs">
       <DependentUpon>IngredientDataModel.tt</DependentUpon>
@@ -290,6 +309,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ContentsDBModel.edmx</DependentUpon>
       <LastGenOutput>ContentsDBModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ExerciseDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ExerciseDataModel.edmx</DependentUpon>
+      <LastGenOutput>ExerciseDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ExerciseDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ExerciseDataModel.edmx</DependentUpon>
+      <LastGenOutput>ExerciseDataModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\IngredientDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -372,6 +401,13 @@
     </EntityDeploy>
     <Content Include="Models\PlayerDataModel.edmx.diagram">
       <DependentUpon>PlayerDataModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ExerciseDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ExerciseDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ExerciseDataModel.edmx.diagram">
+      <DependentUpon>ExerciseDataModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\DataAPI20181004065840 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

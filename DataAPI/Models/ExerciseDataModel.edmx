@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'rpgfitness.dbo.Exercise' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Exercise">
+          <Key>
+            <PropertyRef Name="ex_ID" />
+            <PropertyRef Name="ex_Name" />
+            <PropertyRef Name="ex_Type" />
+            <PropertyRef Name="cals_Burned" />
+          </Key>
+          <Property Name="ex_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ex_Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ex_Type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cals_Burned" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="Exercise" EntityType="Self.Exercise" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Exercise].[ex_ID] AS [ex_ID], 
+    [Exercise].[ex_Name] AS [ex_Name], 
+    [Exercise].[ex_Type] AS [ex_Type], 
+    [Exercise].[cals_Burned] AS [cals_Burned]
+    FROM [dbo].[Exercise] AS [Exercise]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Exercise">
+          <Key>
+            <PropertyRef Name="ex_ID" />
+            <PropertyRef Name="ex_Name" />
+            <PropertyRef Name="ex_Type" />
+            <PropertyRef Name="cals_Burned" />
+          </Key>
+          <Property Name="ex_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ex_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ex_Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cals_Burned" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ExerciseDBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Exercises" EntityType="Self.Exercise" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="ExerciseDBContext">
+          <EntitySetMapping Name="Exercises">
+            <EntityTypeMapping TypeName="Models.Exercise">
+              <MappingFragment StoreEntitySet="Exercise">
+                <ScalarProperty Name="ex_ID" ColumnName="ex_ID" />
+                <ScalarProperty Name="ex_Name" ColumnName="ex_Name" />
+                <ScalarProperty Name="ex_Type" ColumnName="ex_Type" />
+                <ScalarProperty Name="cals_Burned" ColumnName="cals_Burned" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
