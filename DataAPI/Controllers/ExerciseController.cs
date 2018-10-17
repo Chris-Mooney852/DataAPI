@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+
 namespace DataAPI.Controllers
 {
     public class ExerciseController : ApiController
@@ -18,7 +19,7 @@ namespace DataAPI.Controllers
         {
             using (ExerciseDBContext dBContext = new ExerciseDBContext())
             {
-                return dBContext.Exercise.ToList();
+                return dBContext.Exercises.ToList();
             }
         }
 
@@ -31,7 +32,7 @@ namespace DataAPI.Controllers
         {
             using (ExerciseDBContext dbContext = new ExerciseDBContext())
             {
-                return dbContext.Exercise.FirstOrDefault(e => e.ex_ID == id);
+                return dbContext.Exercises.FirstOrDefault(e => e.ex_ID == id);
             }
         }
 
@@ -46,7 +47,7 @@ namespace DataAPI.Controllers
             {
                 using (ExerciseDBContext dBContext = new ExerciseDBContext())
                 {
-                    dBContext.Exercise.Add(exercise);
+                    dBContext.Exercises.Add(exercise);
                     dBContext.SaveChanges();
 
                     var message = Request.CreateResponse(HttpStatusCode.Created, exercise);
@@ -73,7 +74,7 @@ namespace DataAPI.Controllers
             {
                 using (ExerciseDBContext dbContext = new ExerciseDBContext())
                 {
-                    var entity = dbContext.Exercise.FirstOrDefault(e => e.ex_ID == id);
+                    var entity = dbContext.Exercises.FirstOrDefault(e => e.ex_ID == id);
 
                     if (entity == null)
                     {
@@ -108,7 +109,7 @@ namespace DataAPI.Controllers
             {
                 using (ExerciseDBContext dbContext = new ExerciseDBContext())
                 {
-                    var entity = dbContext.Exercise.FirstOrDefault(e => e.ex_ID == id);
+                    var entity = dbContext.Exercises.FirstOrDefault(e => e.ex_ID == id);
                     if (entity == null)
                     {
                         return Request.CreateErrorResponse(HttpStatusCode.NotFound,
@@ -116,7 +117,7 @@ namespace DataAPI.Controllers
                     }
                     else
                     {
-                        dbContext.Exercise.Remove(entity);
+                        dbContext.Exercises.Remove(entity);
                         dbContext.SaveChanges();
                         return Request.CreateResponse(HttpStatusCode.OK);
                     }
