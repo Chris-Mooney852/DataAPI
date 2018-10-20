@@ -72,7 +72,7 @@ namespace DataAPI.Controllers
                         entity.ConsumedCalories = player.ConsumedCalories;
                         entity.TargetDailySteps = player.TargetDailySteps;
                         entity.CurrentSteps = player.CurrentSteps;
-                        entity.LastLogin = player.LastLogin;
+                        entity.LastLogin = TimeZoneInfo.ConvertTimeToUtc((DateTime)player.LastLogin, TimeZoneInfo.Local);
 
 
 

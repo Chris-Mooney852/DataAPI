@@ -9,5 +9,6 @@ namespace DataAPI.Controllers
 {
     public class ExerciseController : ApiController
     {
+
     }
 }
